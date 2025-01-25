@@ -1,0 +1,45 @@
+-------------------------------------------------------
+answers.txt
+-------------------------------------------------------
+Author:  Myra Ribeiro
+ID: 169030590     
+Email: ribe0590@mylaurier.ca
+Date: 2025-01-22
+-------------------------------------------------------
+Answers for Lab 1
+-------------------------------------------------------
+
+Task 1
+
+1. No the behaviour of the program does not change in any way. There is still an error that comes up and the program fails to run. Here is the output originally:
+Assemble: arm-eabi-as -mfloat-abi=softfp -march=armv7-a -mcpu=cortex-a9 -mfpu=neon-fp16 --gdwarf2 -o work/asmg2Wm9i.s.o work/asmg2Wm9i.s
+work/asmg2Wm9i.s: Assembler messages:
+work/asmg2Wm9i.s:18: Error: immediate expression requires a # prefix -- `mov r0,9'
+work/asmg2Wm9i.s:19: Error: immediate expression requires a # prefix -- `mov r1,0xE'
+Compile failed.
+
+Here is the output after:
+Assemble: arm-eabi-as -mfloat-abi=softfp -march=armv7-a -mcpu=cortex-a9 -mfpu=neon-fp16 --gdwarf2 -o work/asm3TYEHM.s.o work/asm3TYEHM.s
+work/asm3TYEHM.s: Assembler messages:
+work/asm3TYEHM.s:18: Error: immediate expression requires a # prefix -- `mov r0,9'
+work/asm3TYEHM.s:19: Error: immediate expression requires a # prefix -- `mov r1,14'
+Compile failed.
+
+Both ways it recognizes the error in the code however it does not seem to care regardless.
+
+Task 2
+
+2. Yes it is legal to do this, 
+the computer recognizes it as legal when you put # in front of the numbers to ignore the errors 
+in those statements of code.
+
+Task 3
+
+
+3. This does not work as it is illegal to add two numbers 
+directly into the r value.  However, when I replace it with a register, it does work and there are no errors.  
+Compiling...
+Assemble: arm-eabi-as -mfloat-abi=softfp -march=armv7-a -mcpu=cortex-a9 -mfpu=neon-fp16 --gdwarf2 -o work/asmFhtURk.s.o work/asmFhtURk.s
+work/asmFhtURk.s: Assembler messages:
+work/asmFhtURk.s:24: Error: bad expression -- `add r4,#4,#5'
+Compile failed.
